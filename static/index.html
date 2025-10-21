@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dice Roller</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header class="wrap">
+<h1>🎲 Dice Roller</h1>
+<p class="muted">FastAPI backend + vanilla JS frontend</p>
+</header>
+
+
+<main class="wrap grid">
+<section class="panel">
+<h2>Roll Controls</h2>
+<form id="controls" class="controls" autocomplete="off">
+<label>
+Number of dice
+<input id="count" type="number" min="1" max="10" value="2" />
+</label>
+<button id="rollBtn" type="submit" class="primary">Roll</button>
+</form>
+<p id="status" class="status" aria-live="polite"></p>
+</section>
+
+
+<section class="panel">
+<h2>Result</h2>
+<div class="dice-row" id="diceRow" aria-label="Dice results"></div>
+<div class="total" id="total"></div>
+</section>
+</main>
+
+
+<footer class="wrap foot">
+<span class="muted">View source on GitHub (add link after you publish)</span>
+</footer>
+
+
+<script src="/static/app.js" type="module"></script>
+</body>
+</html>
