@@ -5,18 +5,14 @@ from fastapi.staticfiles import StaticFiles
 from random import randint
 from typing import List
 
-
 app = FastAPI(title="Dice Roller API")
-
 
 # serve the static frontend
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
 @app.get("/")
 def root():
     return FileResponse("static/index.html")
-
 
 @app.get("/api/roll")
 def roll(count: int = Query(2, ge=1, le=10)) -> dict:
